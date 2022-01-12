@@ -79,13 +79,13 @@ nodeID, optionOneID, optionTwoID, description, optionOneText, optionTwoText
 76,54,68, You have just reached the main road and pass by a field where you see the end of large protest. You appear to have missed it., Chase it, Walk onwards
 77,78,80, 'Well well well' a tesco manager says as he appears from the corner. 'It seems you have discovered our secret. We cannot have any witnesses can we?', Gaslight Manager (0.5 coolness required), 'I guess you are going to have to'
 78,76,90,  'Wrong person I guess you are free to go'. the manager says as he turns his back. (-1 time points), Walk left, Go for a strike
-79,0,-, (Ending 23)
-80
-81
-82
-83
-84
-85
-86
-87
-88
+79,0,-, (Ending 23) It turns out he was a martial arts master. He stops your breathe with a one finger punch to the sternum., Restart,-
+80,81,82, In the blink of an eye the manager fires forward projectile tesco clubcards from his sleeves and are hurdling towards you., Jump out of the way, Hold arms to block
+81,0,-, (Ending 21) You successfully dodge the cards but slip on a banana peel and get knocked out. A dystopian horse burger future agenda will now be set afoot., Restart,-
+82,83,84, You succesfully deflect the innocuous plastic cards and pick one up., Snap one in half, Throw one back
+83,0,-, (Ending 22) Whilst you struggle to snap the card the manager vanishes and reappears behind you clobbering you over the back of the head leaving you dizzy.
+84,85,86, The card flies like a boomerang and slices the managers tie off. "My tie!" he screams as he vanishes into dust. A portal opens in front of you. (+1 coolness points), Take the portal, Head to your lecture
+85,0,-, (Ending 26) You teleport to a court case and successfully sue Tescos. Victory is yours or is it? Did you make it to your 9am on time?, Restart,-
+86,87,88, You reach your lecture very late. The lecturer yells at you and everyone fixes their gazes on you., Explain tardiness (1.5 coolness required), Sit down in shame
+87,0,-, Due to your bravery in the face of adversity you are instantly given your degree and live a successful life as a software developer and program the ai that eventually takes over the world in 2055., Restart,-
+88,0,-, Absolutely mortified you sit through the rest of the lecture not having a clue whats going on. At least you tried. If only people knew what you had to go through., Restart,-
