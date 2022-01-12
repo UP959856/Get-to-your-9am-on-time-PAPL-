@@ -1,0 +1,91 @@
+nodeID, optionOneID, optionTwoID, description, optionOneText, optionTwoText
+
+0,1,-,Press start to enter, Start,-
+1,2,4, You awaken from a strange dream and you look at your phone and realise the time is 8.30am. It is a bleak grey monday morning and you have a 9am. You think to yourself 'I better get to my 9am on time.' as a wave of anxiety hits., Get up and ready to go, Pursue the Dream
+2,3,5, You are by the front door., Smoke cigarette in backyard, Head outside
+3,4,5, The nicotine strikes you with a headrush and you begin to feel a little too comfortable. (+0.5 coolness -1 time points), Put your head back, Fight the urges
+4,0,-, (Ending 1) You fall asleep, Restart, -
+5,6,44, The front door shuts behind you and you are confronted with 3 pathways., Take the park route, Go past Tesco
+6,7,26, A comforting breeze hits you as you walk past the entrance. A mysterious figure with a skateboard walks up to you. He utters 'Wanna shred dude?'., 'No thanks bro I got a lecture to attend', Go with the figure
+7,8,9, You reach the end of the park satisfied with your self-discipline, Continue Walking, Check the time on your phone
+8,10,14, A breeze of wind hits you as you cross the road and you are confronted with two routes. You  can choose the alleyway or the main road., Go via main road, Take the alleyway
+9,0,-, (Ending 13) You get a pop notification for clash of clans and your village is under attack! You put your attention to greater matters., Restart,-
+10,11,52, You reach the main road and reach the crossing. You cross as you realise you beat the rush hour. As you continue down the main road you catch a glimpse of a small object., Continue walking, Walk to the small object
+11,12,13, At a swift pace you reach the end of the road and reach campus. You catch a gaze of the building you have your lecture in and enter and see two students scanning their student id cards and walking off., Imitate the students (0.5 coolness required), Walk into your lecture
+12,0,-, (Ending 15) HEY!!!' your lecturer shouts as he runs and catches you as you make a lethargic attempt to run. 'You're in big trouble you!!'., Restart,-
+13,0,-, (Ending 18) You made it in good time to your 9am good sport! You are a bit boring though., Restart,-
+14,15,16,  A man in a long trench coat towers over you as you try to walk past and he offers you some 'horse medicine'., Indulge, Politely Decline
+15,0,-, (Ending 8) Taking horse medicine when you are not sick is not cool. Especially when you are not a horse. You pass out., Restart,-
+16,17,18, The man exclaims 'I will not let you pass without a duel!'., You're crazy, Go on you scallywag
+17,0,-, (Ending 9) You get clobbered over the back of the head and pass out. You are in no condition to make it to your 9am on time, Restart,-
+18,19,17, The man unsheathes an umbrella handle and charges forward., Parry with skateboard, Attempt to block
+19,20,17, You make the man launch backwards slightly, Hold defensive stance, Go for a strike
+20,21,17, You successfully block a sneaky blow. "Ahhh my special move!". the man exclaims. What will you do next?, Throw holy water bomb, Try to reason with him
+21,23,22, The bomb splashes a ring of holy water which makes the man spontaneously combust. He concedes. Suddenly a hole in the floor appears; a portal it seems. Demons are flying out of it., Use portal to teleport to lecture, Go on a badass demon hunting adventure
+22,0,-, (Ending 10) Apparently demon hunting is not an excuse to ditch your 9ams! You lose., Restart,-
+23,25,24, You manage to attend your lecture 5 minutes before it starts. Turns out bending space and time is viable to making to your lectures. You look out the window and the skies are red., Tell your lecturer about the situation (1.5 coolness required), Sit down
+24,0,-, (Ending 11) You sit through what feels like an extra long hour but feel it has been very productive., Restart,-
+25,0,-, (Ending 12) "Is that so?" your lecturer asks as he pulls out a demon slaying whip. "Looks like we got some work to do!"., Restart,-
+26,27,28, The clatter of skateboard wheels fills the air. A young child yells at you 'Do a kickflip!'., Attempt kickflip, Shudder in fear
+27,0,-, (Ending 5) *Oof* You tumble hard on the ground. 'Are you alright mate?' the skater asks. You stay on the ground for 5 minutes agonising then leave the skatepark mortified and go home., Restart,-
+28,29,35, You admit you are a poser and are kindly taught how to kickflip. You present a perfectly executed kickflip to the child's awe. 'Woah that was wicked' the skater said. He asks if you want to go for a cruise with the boys. (+1 coolness), 'No thanks bro I gotta go to my lecture', Go for a cruise
+29,14,30, You reach the end of the park. You can pass through the main road or through the alleyway which you could've sworn is a shortcut., Take the alleyway, Go via main road
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
