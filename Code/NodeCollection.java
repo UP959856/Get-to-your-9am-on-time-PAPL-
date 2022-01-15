@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class NodeCollection {
 
 private ArrayList<Node> nodes;
-static NodeCollection NodeCollection;
 
 Node mapFields(String nodeData){
 
@@ -25,39 +24,21 @@ Node mapFields(String nodeData){
 
 }
 
-private void buildMap(NodeCollection NodeCollection){
-
-    if (NodeCollection == null){return;}
-    for(Node source: NodeCollection.arrayList()){
-
-        String optionOneID = source.getOptionOneID();
-        String optionTwoID = source.getOptionTwoID();
-        Node optioneOneNode = NodeCollection.locateNodeBy(optionOneID);
-        Node optionTwoNode = NodeCollection.locateNodeBy(optionTwoID);
-        source.setOptionOneID(optionOneID);
-        source.setOptionTwoID(optionTwoID);
-        
-    }
-}
-    
-
-private Node locateNodeBy(String optionOneID) {
-    return null;
-}
-
-public static void main(String[] args){
+static NodeCollection NodeCollection;
+public static void main(String[] args) throws FileNotFoundException{
 
     try {
 
+        NodeCollection  = new NodeCollection();
         java.util.Scanner nodeDatabase = new Scanner(new File("Code/NodeDatabase.csv"));
         while(nodeDatabase.hasNextLine()){
 
             String nodeData = nodeDatabase.nextLine();
+            //System.out.println(nodeData.toString());
             Node.mapFields(nodeData);
+            //NodeCollection.mapFields(nodeData);
 
         }
-
-        NodeCollection = new NodeCollection();
 
     }
 
@@ -65,11 +46,24 @@ public static void main(String[] args){
 
         System.out.println(e.getMessage());
         e.printStackTrace();
+        return;
 
     }
 
     System.out.println(NodeCollection.toString());
 
+}
+
+public String toString(){
+
+    String str = "";
+
+    for(Node n: nodes){
+
+        str += n.toString() + "\n";
+        
+    }
+    return str;
 }
 
 }
