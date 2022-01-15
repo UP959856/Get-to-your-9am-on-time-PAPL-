@@ -73,8 +73,11 @@ public static void mapNode(Node n, String line){
     n.setOptionTwoID(stringArray[2]);
     n.setDescription(stringArray[3]);
     n.setOptionOneText(stringArray[4]);
-   n.setOptionTwoText(stringArray[5]);
+    n.setOptionTwoText(stringArray[5]);
 
+}
+
+public static void mapFields(String nodeData) {
 }
 
 //public static void main(String[] args){
