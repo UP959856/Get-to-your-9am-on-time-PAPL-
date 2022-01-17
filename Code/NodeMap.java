@@ -33,14 +33,18 @@ public void decisionOne(){
 }
 
 public void decisionTwo(int decision) {
+    
     switch (decision) {
+
         case 1:
             currentNode = currentNode.getOptionOneNode();
             break;
         case 2:
             currentNode = currentNode.getOptionTwoNode();
             break;
+
      }
+
 }
 
 private void buildMap(NodeCollection NodeCollection){
