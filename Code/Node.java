@@ -4,9 +4,9 @@ class Node{
 
 
 //Each of the data any given node contains.
-private String currentNodeID;
-private String optionOneID;
-private String optionTwoID;
+private int currentNodeID;
+private int optionOneID;
+private int optionTwoID;
 private String description;
 private String optionOneText;
 private String optionTwoText;
@@ -16,7 +16,7 @@ private Node optionOneNode;
 private Node optionTwoNode;
 
 //Current Node Information
-public void currentNode(String nodeID, String optionOneID, String optionTwoID, String description, String optionOneText, String optionTwoText) {
+public void currentNode(int nodeID, int optionOneID, int optionTwoID, String description, String optionOneText, String optionTwoText) {
     
     this.currentNodeID = nodeID;
     this.optionOneID = optionOneID;
@@ -28,14 +28,14 @@ public void currentNode(String nodeID, String optionOneID, String optionTwoID, S
 }
 
 //Getters and Setters for each attribute in a Node.
-public String getCurrentNodeID() {return currentNodeID;}
-public void setCurrentNodeID(String currentNodeID) {this.currentNodeID = currentNodeID;}
+public int getCurrentNodeID() {return currentNodeID;}
+public void setCurrentNodeID(int currentNodeID) {this.currentNodeID = currentNodeID;}
 
-public String getOptionOneID() {return optionOneID;}
-public void setOptionOneID(String optionOneID) {this.optionOneID = optionOneID;}
+public int getOptionOneID() {return optionOneID;}
+public void setOptionOneID(int optionOneID) {this.optionOneID = optionOneID;}
 
-public String getOptionTwoID() {return optionTwoID;}
-public void setOptionTwoID(String optionTwoID) {this.optionTwoID = optionTwoID;}
+public int getOptionTwoID() {return optionTwoID;}
+public void setOptionTwoID(int optionTwoID) {this.optionTwoID = optionTwoID;}
 
 public String getDescription() {return description;}
 public void setDescription(String description) {this.description = description;}
@@ -48,10 +48,10 @@ public void setOptionTwoText(String optionTwoText) {this.optionTwoText = optionT
 
 //Getters and setters for each of the two option nodes.
 public Node getOptionOneNode(){return optionOneNode;}
-public void setOptionOneNode(Node yes){this.optionOneNode = yes;}
+public void setOptionOneNode(Node optionOne){this.optionOneNode = optionOne;}
 
 public Node getOptionTwoNode(){return optionTwoNode;}
-public void setOptionTwoNode(Node no){this.optionTwoNode = no;}
+public void setOptionTwoNode(Node optionTwo){this.optionTwoNode = optionTwo;}
 
 @Override
 
@@ -68,16 +68,13 @@ public String toString(){
 public static void mapNode(Node n, String line){
 
     String[] stringArray = line.split(",");
-    n.setCurrentNodeID(stringArray[0]);
-    n.setOptionOneID(stringArray[1]);
-    n.setOptionTwoID(stringArray[2]);
+    n.setCurrentNodeID(Integer.parseInt(stringArray[0]));
+    n.setOptionOneID(Integer.parseInt(stringArray[1]));
+    n.setOptionTwoID(Integer.parseInt(stringArray[2]));
     n.setDescription(stringArray[3]);
     n.setOptionOneText(stringArray[4]);
     n.setOptionTwoText(stringArray[5]);
 
-}
-
-public static void mapFields(String nodeData) {
 }
 
 //public static void main(String[] args){
