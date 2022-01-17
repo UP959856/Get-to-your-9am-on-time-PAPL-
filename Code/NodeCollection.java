@@ -7,16 +7,16 @@ import java.util.Scanner;
 
 public class NodeCollection {
 
-private ArrayList<Node> nodes;
+private static ArrayList<Node> nodes;
 
 Node mapFields(String nodeData){
 
     String[] stringArray = nodeData.split(",");
     Node n = new Node();
 
-    n.setCurrentNodeID(stringArray[0]);
-    n.setOptionOneID(stringArray[1]);
-    n.setOptionTwoID(stringArray[2]);
+    n.setCurrentNodeID(Integer.parseInt(stringArray[0]));
+    n.setOptionOneID(Integer.parseInt(stringArray[1]));
+    n.setOptionTwoID(Integer.parseInt(stringArray[2]));
     n.setDescription(stringArray[3]);
     n.setOptionOneText(stringArray[4]);
     n.setOptionTwoText(stringArray[5]);
@@ -24,35 +24,42 @@ Node mapFields(String nodeData){
 
 }
 
-static NodeCollection NodeCollection;
-public static void main(String[] args) throws FileNotFoundException{
+NodeCollection NodeCollection;
 
-    try {
+public NodeCollection() throws FileNotFoundException{
 
-        NodeCollection  = new NodeCollection();
-        java.util.Scanner nodeDatabase = new Scanner(new File("Code/NodeDatabase.csv"));
-        while(nodeDatabase.hasNextLine()){
+    NodeCollection = new NodeCollection();
+    java.util.Scanner nodeDatabase = new Scanner(new File("Code/NodeDatabase.csv"));
+        
+    while(nodeDatabase.hasNextLine()){
 
-            String nodeData = nodeDatabase.nextLine();
-            //System.out.println(nodeData.toString());
-            Node.mapFields(nodeData);
-            //NodeCollection.mapFields(nodeData);
-
-        }
-
-    }
-
-    catch (FileNotFoundException e){
-
-        System.out.println(e.getMessage());
-        e.printStackTrace();
-        return;
+        String nodeData = nodeDatabase.nextLine();
+        nodes = new ArrayList<Node>();
+        Node node;
+        node = mapFields(nodeData);
+        nodes.add(node);
 
     }
-
-    System.out.println(NodeCollection.toString());
 
 }
+
+public ArrayList<Node> arrayList(){return nodes;}
+
+public Node get(int index){return nodes.get(index);}
+
+public Node locateNodeBy(int nodeID) {
+
+    for (Node n : nodes) {
+        if (nodeID == n.getCurrentNodeID()) {
+
+            return n;
+
+        }
+    }
+    
+    return new Node();
+}
+
 
 public String toString(){
 
