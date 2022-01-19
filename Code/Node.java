@@ -65,6 +65,7 @@ public String toString(){
 
 }
 
+//Sets node information.
 public static void mapNode(Node n, String line){
 
     String[] stringArray = line.split(",");
