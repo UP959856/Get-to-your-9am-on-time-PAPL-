@@ -19,7 +19,7 @@ public Console(NodeMap map) {
         print(map.currentNode().getOptionOneText());
         print(map.currentNode().getoptionTwoText());
 
-        if (map.currentNode().getoptionTwoText().equals(" ")) {
+        if (map.currentNode().getoptionTwoText().equals("-")) {
 
             pressEnterToContinue();
             map.optionOnePath();
