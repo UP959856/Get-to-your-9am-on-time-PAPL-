@@ -24,6 +24,7 @@ public NodeMap()  {
     
     buildMap(nodeCollection);
     currentNode = head;
+    
 }
 
 public Node currentNode() {return currentNode;}
