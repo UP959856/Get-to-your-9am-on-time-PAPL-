@@ -19,12 +19,12 @@ public Console(NodeMap map) {
         print(map.currentNode().getOptionOneText());
         print(map.currentNode().getoptionTwoText());
 
-        if (map.currentNode().getDescription().equals("-")) {
+        if (map.currentNode().getoptionTwoText().equals("")) {
             pressEnterToContinue();
-            map.optionTwoPath();
+            map.optionOnePath();
         } else {
             map.optionOnePath();
-                    fromConsoleGetInt("Yes or No? (press 1 for Yes or 2 No)");
+                    fromConsoleGetInt("Option one or two? (press 1 or 2)");
 
         }
         
