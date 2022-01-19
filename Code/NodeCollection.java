@@ -1,6 +1,5 @@
 package Code;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -24,22 +23,23 @@ Node mapFields(String nodeData){
 
 }
 
-NodeCollection NodeCollection;
-
 public NodeCollection() throws FileNotFoundException{
 
-    NodeCollection = new NodeCollection();
-    java.util.Scanner nodeDatabase = new Scanner(new File("Code/NodeDatabase.csv"));
-        
-    while(nodeDatabase.hasNextLine()){
+    java.io.File nodeDatabase = new java.io.File("Code/NodeDatabase.csv");
+    Scanner fileRef = new Scanner(nodeDatabase);
 
-        String nodeData = nodeDatabase.nextLine();
-        nodes = new ArrayList<Node>();
-        Node node;
+    nodes = new ArrayList<Node>();
+    Node node;
+        
+    while(fileRef.hasNextLine()){
+
+        String nodeData = fileRef.nextLine();
         node = mapFields(nodeData);
         nodes.add(node);
 
     }
+
+    fileRef.close();
 
 }
 
@@ -56,7 +56,7 @@ public Node locateNodeBy(int nodeID) {
 
         }
     }
-    
+
     return new Node();
 }
 
