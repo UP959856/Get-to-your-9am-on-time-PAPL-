@@ -26,9 +26,8 @@ public Console(NodeMap map) {
 
         } else {
 
-            map.optionOnePath();
+            map.decision(fromConsoleGetInt("Press 1 or 2"));
 
-                fromConsoleGetInt("Option one or two? (press 1 or 2)");
 
         }
         
