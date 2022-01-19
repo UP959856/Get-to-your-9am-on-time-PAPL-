@@ -27,6 +27,8 @@ public void currentNode(int nodeID, int optionOneID, int optionTwoID, String des
 
 }
 
+public Node(){}
+
 //Getters and Setters for each attribute in a Node.
 public int getCurrentNodeID() {return currentNodeID;}
 public void setCurrentNodeID(int currentNodeID) {this.currentNodeID = currentNodeID;}
@@ -62,19 +64,6 @@ public String toString(){
     ", Description: " + description + ", Option One ID: " +
     optionOneID + ", Option One Text: " + optionOneText + ", Option Two ID: "
     + optionTwoID + ", Option Two Text: " + optionTwoText;
-
-}
-
-//Sets node information.
-public static void mapNode(Node n, String line){
-
-    String[] stringArray = line.split(",");
-    n.setCurrentNodeID(Integer.parseInt(stringArray[0]));
-    n.setOptionOneID(Integer.parseInt(stringArray[1]));
-    n.setOptionTwoID(Integer.parseInt(stringArray[2]));
-    n.setDescription(stringArray[3]);
-    n.setOptionOneText(stringArray[4]);
-    n.setOptionTwoText(stringArray[5]);
 
 }
 
