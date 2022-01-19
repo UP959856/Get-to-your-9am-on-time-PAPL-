@@ -24,7 +24,7 @@ public Console(NodeMap map) {
             map.optionTwoPath();
         } else {
             map.optionOnePath();
-                    fromConsoleGetInt("Yes or No? (press 1 for Yes or 2 No)")
+                    fromConsoleGetInt("Yes or No? (press 1 for Yes or 2 No)");
 
         }
         
