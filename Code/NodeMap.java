@@ -24,7 +24,7 @@ public NodeMap()  {
     
     buildMap(nodeCollection);
     currentNode = head;
-    
+
 }
 
 public Node currentNode() {return currentNode;}
@@ -33,7 +33,7 @@ public void decisionOne(){
     currentNode = currentNode.getOptionOneNode();
 }
 
-public void decisionTwo(int decision) {
+public void decision(int decision) {
     
     switch (decision) {
 
