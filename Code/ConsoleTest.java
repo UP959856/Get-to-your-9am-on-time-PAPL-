@@ -9,7 +9,6 @@ public static void main(String[] args) throws FileNotFoundException {
 
     Console c = new Console(map);
 
-    
 }
     
 }
