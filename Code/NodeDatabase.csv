@@ -45,7 +45,7 @@
 44,45,49, You feel a rumbling in your stomach, Go to Tescos, Keep walking on
 45,46,48, As you head into Tescos you cannot help but resist to check the meal deal area as you deeply inspect it. (-1 time points), Select a meal deal, Head to snacks area
 46,47,48, You decide to pick up a snickers bar with a sandwich and a monster energy after careful consideration. (-1 time points), Chug Monster, Checkout
-47,0,0, (Ending 19) You feel your stomach rumbling violently as you need to rust to the toilet. You then die of a cardiac arrest., Restart,-
+47,0,0, (Ending 19) You feel your stomach rumbling violently as you need to rush to the toilet. You then die of a cardiac arrest., Restart,-
 48,49,75, You cannot help but notice Tescos new premade 'beef' burgers however something seems off about them., Ignore it and head onwards, Buy it and head out
 49,50,68, Heading down the main road you hear a conundrum coming from the field. You peer into it and see alot of people seeming to protest., Check it out, Keep walking on
 50,51,53, Upon closer inspection you realise it is an anti-vax and anti-mask protest., Join the crowd, Avoid them like the plague
