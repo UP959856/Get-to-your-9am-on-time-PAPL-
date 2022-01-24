@@ -7,6 +7,7 @@ public class NodeMap {
 private Node head;
 private Node currentNode;
 
+//Initiates node collection and then maps it with exception handling.
 public NodeMap()  {
     
     NodeCollection nodeCollection;   //scope: constructor only, part of process, no requirement to keep;
@@ -27,12 +28,15 @@ public NodeMap()  {
 
 }
 
+//Returns current node.
 public Node currentNode() {return currentNode;}
 
+//Allow for looping when it reaches the end.
 public void decisionOne(){
     currentNode = currentNode.getOptionOneNode();
 }
 
+//Handles the decision making.
 public void decision(int decision) {
     
     switch (decision) {
@@ -48,6 +52,7 @@ public void decision(int decision) {
 
 }
 
+//Goes through each node and maps it to both options.
 private void buildMap(NodeCollection NodeCollection){
     if(NodeCollection == null){return; }
     for(Node source : NodeCollection.arrayList()){
@@ -60,6 +65,7 @@ private void buildMap(NodeCollection NodeCollection){
     }
 }
 
+//Both path methods to allow going to each node.
 public String optionOnePath(){
 
     Node node = head;
