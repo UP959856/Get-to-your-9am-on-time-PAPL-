@@ -20,6 +20,7 @@ Node mapFields(String nodeData){
     n.setDescription(stringArray[3]);
     n.setOptionOneText(stringArray[4]);
     n.setOptionTwoText(stringArray[5]);
+    
     return n;
 
 }
