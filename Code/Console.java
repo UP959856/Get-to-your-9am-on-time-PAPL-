@@ -35,6 +35,7 @@ public Console(NodeMap map) {
     
 }
 
+//Obtains the numerical input and returns the decision.
 public  int fromConsoleGetInt(String prompt){
 
     print(prompt);
@@ -43,6 +44,7 @@ public  int fromConsoleGetInt(String prompt){
 
 }
 
+//Allows the user to press enter to continue.
 public  void pressEnterToContinue(){
     
     print("Press the Enter key to continue...");
