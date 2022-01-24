@@ -8,6 +8,7 @@ public class NodeCollection {
 
 private static ArrayList<Node> nodes;
 
+//Sets corresponding attributes to a node and makes it.
 Node mapFields(String nodeData){
 
     String[] stringArray = nodeData.split(",");
@@ -23,15 +24,16 @@ Node mapFields(String nodeData){
 
 }
 
+//Runs the node collection and makes a collection of the nodes to be mapped.
 public NodeCollection() throws FileNotFoundException{
 
     java.io.File nodeDatabase = new java.io.File("Code/NodeDatabase.csv");
     Scanner fileRef = new Scanner(nodeDatabase);
 
-    nodes = new ArrayList<Node>();
+    nodes = new ArrayList<Node>(); //Initialises the needed classes to make all nodes.
     Node node;
         
-    while(fileRef.hasNextLine()){
+    while(fileRef.hasNextLine()){ //Keeps the node making process going until the file has no more lines.
 
         String nodeData = fileRef.nextLine();
         node = mapFields(nodeData);
@@ -43,10 +45,13 @@ public NodeCollection() throws FileNotFoundException{
 
 }
 
+//Returns all the nodes from the new array list.
 public ArrayList<Node> arrayList(){return nodes;}
 
+//Method to retrieve a specific node needed.
 public Node get(int index){return nodes.get(index);}
 
+//Locate a node by its actual id.
 public Node locateNodeBy(int nodeID) {
 
     for (Node n : nodes) {
@@ -60,7 +65,7 @@ public Node locateNodeBy(int nodeID) {
     return new Node();
 }
 
-
+//To string display method to
 public String toString(){
 
     String str = "";
