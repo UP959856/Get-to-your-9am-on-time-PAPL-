@@ -48,7 +48,7 @@ public void setOptionOneText(String optionOneText) {this.optionOneText = optionO
 public String getoptionTwoText() {return optionTwoText;}
 public void setOptionTwoText(String optionTwoText) {this.optionTwoText = optionTwoText;}
 
-//Getters and setters for each of the two option nodes.
+//Getters and setters for each of the two option nodes to allow for mapping.
 public Node getOptionOneNode(){return optionOneNode;}
 public void setOptionOneNode(Node optionOne){this.optionOneNode = optionOne;}
 
@@ -66,28 +66,6 @@ public String toString(){
     + optionTwoID + ", Option Two Text: " + optionTwoText;
 
 }
-
-//public static void main(String[] args){
-
-//    String Line0 = "1,2,4, You awaken from a strange dream and you look at your phone and realise the time is 8.30am. It is a bleak grey monday morning and you have a 9am. You think to yourself 'I better get to my 9am on time.' as a wave of anxiety hits., Get up and ready to go, Pursue the Dream";
-//    String Line1 = "2,3,5, You are by the front door., Smoke cigarette in backyard, Head outside";
-//    String Line2 = "3,4,5, The nicotine strikes you with a headrush and you begin to feel a little too comfortable. (+0.5 coolness -1 time points), Put your head back, Fight the urges";
-
-//    Node n0 = new Node();
-//    mapNode(n0, Line0);
-//    Node n1 = new Node();
-//    mapNode(n1, Line1);
-//    Node n2 = new Node();
-//    mapNode(n2, Line2);
-
-//    n0.setOptionOneNode(n1);
-//    n1.setOptionTwoNode(n2);
-
-//    System.out.println(n0.toString());
-//   System.out.println(n1.toString());
-//    System.out.println(n2.toString());
-
-//}
 
 }
 
