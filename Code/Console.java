@@ -18,7 +18,9 @@ public Console(NodeMap map) {
         print(map.currentNode().getDescription());
         print(map.currentNode().getOptionOneText());
         print(map.currentNode().getoptionTwoText());
+
 //If statement will allow looping once the user reaches the end of the game.
+
         if (map.currentNode().getoptionTwoText().equals("-")) {
 
             pressEnterToContinue();
