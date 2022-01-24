@@ -12,13 +12,13 @@ static Scanner io;
 public Console(NodeMap map) {
 
     io = new Scanner(System.in);
-
+//Keeps the program running until it runs out of nodes or reaches the end.
     while(map.currentNode() != null){
 
         print(map.currentNode().getDescription());
         print(map.currentNode().getOptionOneText());
         print(map.currentNode().getoptionTwoText());
-
+//If statement will allow looping once the user reaches the end of the game.
         if (map.currentNode().getoptionTwoText().equals("-")) {
 
             pressEnterToContinue();
