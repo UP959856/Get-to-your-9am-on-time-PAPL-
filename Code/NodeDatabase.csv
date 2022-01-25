@@ -3,7 +3,7 @@
 2,3,5, You are by the front door., Smoke cigarette in backyard, Head outside
 3,4,5, The nicotine strikes you with a headrush and you begin to feel a little too comfortable. (+0.5 coolness -1 time points), Put your head back, Fight the urges
 4,0,0, (Ending 1) You fall asleep, Restart,-
-5,6,44, The front door shuts behind you and you are confronted with 3 pathways., Take the park route, Go past Tesco
+5,6,44, The front door shuts behind you and you are confronted with 2 pathways., Take the park route, Go past Tesco
 6,7,26, A comforting breeze hits you as you walk past the entrance. A mysterious figure with a skateboard walks up to you. He utters 'Wanna shred dude?'., 'No thanks bro I got a lecture to attend', Go with the figure
 7,8,9, You reach the end of the park satisfied with your self-discipline, Continue Walking, Check the time on your phone
 8,10,14, A breeze of wind hits you as you cross the road and you are confronted with two routes. You  can choose the alleyway or the main road., Go via main road, Take the alleyway
