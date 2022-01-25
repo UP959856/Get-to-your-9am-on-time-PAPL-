@@ -1,6 +1,7 @@
 package Code;
 
 import java.util.Scanner;
+import java.util.Random;
 
 @SuppressWarnings("ALL")
 
@@ -23,8 +24,10 @@ public Console(NodeMap map) {
 
         if (map.currentNode().getoptionTwoText().equals("-")) {
 
-            pressEnterToContinue();
-            map.optionOnePath();
+            //pressEnterToContinue();
+            //map.decision(1);
+            //map.decision(fromConsoleGetInt("Select Option 1 to restart"));
+            break;
 
         } else {
 
@@ -41,7 +44,8 @@ public Console(NodeMap map) {
 public  int fromConsoleGetInt(String prompt){
 
     print(prompt);
-    int returnValue = io.nextInt();
+    //int returnValue = io.nextInt();
+    int returnValue = randNumber();
     return returnValue;
 
 }
@@ -56,5 +60,22 @@ public  void pressEnterToContinue(){
 }
 
 public void print(String info){System.out.println(info);}
-    
+
+private int randNumber(){
+
+    wait(1000);
+
+    Random rand = new Random();
+    int upperBound = 87;
+    int randomInteger = rand.nextInt(upperBound) + 1;
+    return randomInteger;
+
+}
+
+public static void wait(int ms){
+
+    try{Thread.sleep(1000);}
+    catch(InterruptedException ex){Thread.currentThread().interrupt();}
+
+}
 }
