@@ -63,19 +63,12 @@ public void print(String info){System.out.println(info);}
 
 private int randNumber(){
 
-    wait(5000);
-
     Random rand = new Random();
-    int upperBound = 87;
+    int upperBound = 1;
     int randomInteger = rand.nextInt(upperBound) + 1;
     return randomInteger;
 
 }
 
-public static void wait(int ms){
 
-    try{Thread.sleep(1000);}
-    catch(InterruptedException ex){Thread.currentThread().interrupt();}
-
-}
 }
