@@ -1,7 +1,7 @@
 package Code;
 
 import java.util.Scanner;
-import java.util.Random;
+//import java.util.Random;
 
 @SuppressWarnings("ALL")
 
