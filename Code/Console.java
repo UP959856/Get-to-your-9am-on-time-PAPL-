@@ -63,7 +63,7 @@ public void print(String info){System.out.println(info);}
 
 private int randNumber(){
 
-    wait(1000);
+    wait(5000);
 
     Random rand = new Random();
     int upperBound = 87;
