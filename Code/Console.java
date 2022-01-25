@@ -24,12 +24,11 @@ public Console(NodeMap map) {
 
         if (map.currentNode().getoptionTwoText().equals("-")) {
 
-            //pressEnterToContinue();
-            //map.decision(1);
-            //map.decision(fromConsoleGetInt("Select Option 1 to restart"));
-            break;
+            map.decision(fromConsoleGetInt("Select Option 1 to restart"));
 
-        } else {
+        } 
+        
+        else {
 
             map.decision(fromConsoleGetInt("Press 1 or 2"));
 
@@ -44,8 +43,8 @@ public Console(NodeMap map) {
 public  int fromConsoleGetInt(String prompt){
 
     print(prompt);
-    //int returnValue = io.nextInt();
-    int returnValue = randNumber();
+    int returnValue = io.nextInt();
+    //int returnValue = randNumber();
     return returnValue;
 
 }
@@ -61,14 +60,13 @@ public  void pressEnterToContinue(){
 
 public void print(String info){System.out.println(info);}
 
-private int randNumber(){
-
-    Random rand = new Random();
-    int upperBound = 1;
-    int randomInteger = rand.nextInt(upperBound) + 1;
-    return randomInteger;
-
-}
+//private int randNumber(){
+//
+//    Random rand = new Random();
+//    int randomInteger = rand.nextInt((2 - 1) + 1) + 1;
+//    return randomInteger;
+//
+//}
 
 
 }
