@@ -41,5 +41,12 @@ public class PlayerStats {
         return "Coolness: " + coolness + "\n" + "Time: " + time;
 
     }
+
+    public void resetStats(){
+
+        this.setCoolnessPoints(0);
+        this.setTimePoints(0);
+        
+    }
     
 }
