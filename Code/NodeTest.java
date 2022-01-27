@@ -20,7 +20,7 @@ public static void main(String[] args){
 
     print(n0.toString());
     print(n0.getOptionOneNode().toString());
-    print(n0.getOptionTwoNode().toString());
+    //print(n0.getOptionTwoNode().toString());
 
     
 }
