@@ -67,6 +67,7 @@ private void buildMap(NodeCollection NodeCollection){
         source.setOptionTwoNode(optionTwoNode);
         
     }
+
 }
 
 //Both path methods to allow going to each node.
@@ -101,6 +102,27 @@ public String optionTwoPath(){
     }
 
     return string;
+}
+
+//Locks paths if class.PlayerStats does not have the requirements to pass through a path.
+public void optionOnePathLock(Boolean canPass, NodeMap nm){
+
+    if (canPass == true){
+
+        nm.decision(2);
+
+    }
+
+}
+
+public void optionTwoPathLock(Boolean canPass, NodeMap nm){
+
+    if (canPass == true){
+
+        nm.decision(1);
+
+    }
+
 }
 
 
