@@ -37,13 +37,14 @@ public Console(NodeMap map) {
         if (map.currentNode().getOptionTwoText().equals("-")) {
 
             map.decision(fromConsoleGetInt("Select Option 1 to restart", canPassOptionOne, canPassOptionTwo));
+            playerStats.resetStats();
 
         } 
         
         else {
 
-            //canPassOptionOne = map.canPassOptionOne(map, playerStats);
-            //canPassOptionTwo = map.canPassOptionTwo(map, playerStats);
+            canPassOptionOne = map.canPassOptionOne(map, playerStats);
+            canPassOptionTwo = map.canPassOptionTwo(map, playerStats);
             map.decision(fromConsoleGetInt("Enter either option 1 or 2", canPassOptionOne, canPassOptionTwo));
 
         }
@@ -56,9 +57,38 @@ public Console(NodeMap map) {
 public  int fromConsoleGetInt(String prompt, Boolean canPassOptionOne, Boolean canPassOptionTwo){
 
     print(prompt);
+    int returnValue = 0;
 
-    int returnValue = io.nextInt();
+    if(canPassOptionOne == false | canPassOptionTwo == false){
+
+        print("You do not have the stats required.");
+
+        if(canPassOptionOne == false){
+            while (returnValue != 2){
+
+                returnValue = io.nextInt();
+
+            }
+        }
+
+        else{
+            while (returnValue != 1){
+
+                returnValue = io.nextInt();
+
+            }
+        }
+
+    }
+
+    else{
+
+    returnValue = io.nextInt();
     //int returnValue = randNumber();
+    
+    }
+
+    
     return returnValue;
 
 }
