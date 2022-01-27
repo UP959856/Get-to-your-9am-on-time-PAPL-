@@ -32,7 +32,6 @@ public Console(NodeMap map) {
 
             map.decision(fromConsoleGetInt("Press 1 or 2"));
 
-
         }
         
     }
