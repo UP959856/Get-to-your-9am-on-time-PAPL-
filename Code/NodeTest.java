@@ -4,9 +4,10 @@ public class NodeTest {
 
 public static void main(String[] args){
 
-    String line0 = "1,2,4, You awaken from a strange dream and you look at your phone and realize the time is 8.30am. It is a bleak grey monday morning and you have a 9am. You think to yourself 'I better get to my 9am on time.' as a wave of anxiety hits., Get up and ready to go, Pursue the Dream";
-    String line1 = "2,3,5, You are by the front door., Smoke cigarette in backyard, Head outside";
-    String line2 = "4,0,0, (Ending 1) You fall asleep, Restart,-";
+    String line0 = "1,2,4, You awaken from a strange dream and you look at your phone and realize the time is 8.30am. It is a bleak grey monday morning and you have a 9am. You think to yourself 'I better get to my 9am on time.' as a wave of anxiety hits., Get up and ready to go, Pursue the Dream,false,false,-,-,-,-,-,-";
+    String line1 = "2,3,5, You are by the front door., Smoke cigarette in backyard, Head outside,false,false,-,-,-,-,-,-";
+    String line2 = "4,0,0, (Ending 1) You fall asleep, Restart,-,false,false,-,-,-,-,-,-";
+    String line3 = "3,4,5, The nicotine strikes you with a headrush and you begin to feel a little too comfortable. (+0.5 coolness -1 time points), Put your head back, Fight the urges,false,false,-,-,-,-,0.5,-1";
 
     Node n0 = new Node();
     mapNode(n0, line0);
@@ -14,6 +15,8 @@ public static void main(String[] args){
     mapNode(n1, line1);
     Node n2 = new Node();
     mapNode(n2, line2);
+    Node n3 = new Node();
+    mapNode(n3, line3);
 
     n0.setOptionOneNode(n1);
     n0.setOptionTwoNode(n2);
@@ -21,6 +24,7 @@ public static void main(String[] args){
     print(n0.toString());
     print(n0.getOptionOneNode().toString());
     print(n0.getOptionTwoNode().toString());
+    print(n3.toString());
 
     
 }
@@ -35,6 +39,18 @@ public static void mapNode(Node n, String line){
     n.setDescription(stringArray[3]);
     n.setOptionOneText(stringArray[4]);
     n.setOptionTwoText(stringArray[5]);
+
+    //n.setOptionOneHasRequirement(Boolean.parseBoolean(stringArray[6]));
+    //n.setOptionTwoHasRequirement(Boolean.parseBoolean(stringArray[7]));
+
+    //n.setOptionOneCoolnessRequirement(Integer.parseInt(stringArray[8]));
+    //n.setOptionOneTimeRequirement(Integer.parseInt(stringArray[9]));
+
+    //n.setOptionTwoCoolnessRequirement(Integer.parseInt(stringArray[10]));
+    //n.setOptionTwoTimeRequirement(Integer.parseInt(stringArray[11]));
+
+    //n.setCoolnessGained(Integer.parseInt(stringArray[12]));
+    //n.setTimeGained(Integer.parseInt(stringArray[13]));
 
 }
 
