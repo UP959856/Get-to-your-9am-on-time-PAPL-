@@ -20,6 +20,18 @@ Node mapFields(String nodeData){
     n.setDescription(stringArray[3]);
     n.setOptionOneText(stringArray[4]);
     n.setOptionTwoText(stringArray[5]);
+
+    n.setOptionOneHasRequirement(Boolean.parseBoolean(stringArray[6]));
+    n.setOptionTwoHasRequirement(Boolean.parseBoolean(stringArray[7]));
+
+    n.setOptionOneCoolnessRequirement(Float.parseFloat(stringArray[8]));
+    n.setOptionOneTimeRequirement(Float.parseFloat(stringArray[9]));
+
+    n.setOptionTwoCoolnessRequirement(Float.parseFloat(stringArray[10]));
+    n.setOptionTwoTimeRequirement(Float.parseFloat(stringArray[11]));
+
+    n.setCoolnessGained(Float.parseFloat(stringArray[12]));
+    n.setTimeGained(Float.parseFloat(stringArray[13]));
     
     return n;
 
