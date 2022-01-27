@@ -54,14 +54,18 @@ public void decision(int decision) {
 
 //Goes through each node and maps it to both options.
 private void buildMap(NodeCollection NodeCollection){
+
     if(NodeCollection == null){return; }
+
     for(Node source : NodeCollection.arrayList()){
+
         int optionOneID = source.getOptionOneID();
         int optionTwoID = source.getOptionTwoID();
         Node optionOneNode = NodeCollection.locateNodeBy(optionOneID);
         Node optionTwoNode = NodeCollection.locateNodeBy(optionTwoID);
         source.setOptionOneNode(optionOneNode);
         source.setOptionTwoNode(optionTwoNode);
+        
     }
 }
 
