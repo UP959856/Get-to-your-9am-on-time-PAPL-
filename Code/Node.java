@@ -16,7 +16,8 @@ private Node optionOneNode;
 private Node optionTwoNode;
 
 //Current Node Information
-public void currentNode(int nodeID, int optionOneID, int optionTwoID, String description, String optionOneText, String optionTwoText) {
+public void currentNode(int nodeID, int optionOneID, int optionTwoID, String description,
+ String optionOneText, String optionTwoText) {
     
     this.currentNodeID = nodeID;
     this.optionOneID = optionOneID;
@@ -45,7 +46,7 @@ public void setDescription(String description) {this.description = description;}
 public String getOptionOneText() {return optionOneText;}
 public void setOptionOneText(String optionOneText) {this.optionOneText = optionOneText;}
 
-public String getoptionTwoText() {return optionTwoText;}
+public String getOptionTwoText() {return optionTwoText;}
 public void setOptionTwoText(String optionTwoText) {this.optionTwoText = optionTwoText;}
 
 //Getters and setters for each of the two option nodes to allow for mapping.
