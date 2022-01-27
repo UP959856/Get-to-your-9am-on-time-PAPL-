@@ -88,6 +88,36 @@ public String optionOnePath(){
     
 }
 
+public Boolean canPassOptionOne(NodeMap nm, PlayerStats playerStats){
+
+    boolean canPassOptionOne = true;
+
+    if(nm.currentNode().optionOneHasRequirement() == true){
+
+        canPassOptionOne = playerStats.hasStats(playerStats.coolness, playerStats.time,
+         nm.currentNode().getOptionOneCoolnessRequirement(), nm.currentNode().getOptionOneTimeRequirement());
+
+    }
+
+    return canPassOptionOne;
+
+}
+
+public Boolean canPassOptionTwo(NodeMap nm, PlayerStats playerStats){
+
+    boolean canPassOptionTwo = true;
+
+    if(nm.currentNode().optionOneHasRequirement() == true){
+
+        canPassOptionTwo = playerStats.hasStats(playerStats.coolness, playerStats.time,
+         nm.currentNode().getOptionOneCoolnessRequirement(), nm.currentNode().getOptionOneTimeRequirement());
+
+    }
+
+    return canPassOptionTwo;
+
+}
+
 public String optionTwoPath(){
 
     Node node = head;
@@ -103,27 +133,5 @@ public String optionTwoPath(){
 
     return string;
 }
-
-//Locks paths if class.PlayerStats does not have the requirements to pass through a path.
-public void optionOnePathLock(Boolean canPass, NodeMap nm){
-
-    if (canPass == true){
-
-        nm.decision(2);
-
-    }
-
-}
-
-public void optionTwoPathLock(Boolean canPass, NodeMap nm){
-
-    if (canPass == true){
-
-        nm.decision(1);
-
-    }
-
-}
-
 
 }
