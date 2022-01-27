@@ -1,4 +1,4 @@
-package Code;
+
 
 public class NodeTest {
 
@@ -35,7 +35,6 @@ public static void mapNode(Node n, String line){
     n.setDescription(stringArray[3]);
     n.setOptionOneText(stringArray[4]);
     n.setOptionTwoText(stringArray[5]);
-
 
 }
 
