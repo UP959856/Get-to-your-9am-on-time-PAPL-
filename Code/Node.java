@@ -11,12 +11,12 @@ private String optionOneText;
 private String optionTwoText;
 private boolean optionOneHasRequirement;
 private boolean optionTwoHasRequirement;
-private int optionOneCoolnessRequirement;
-private int optionOneTimeRequirement;
-private int optionTwoCoolnessRequirement;
-private int optionTwoTimeRequirement;
-private int coolnessGained;
-private int timeGained;
+private float optionOneCoolnessRequirement;
+private float optionOneTimeRequirement;
+private float optionTwoCoolnessRequirement;
+private float optionTwoTimeRequirement;
+private float coolnessGained;
+private float timeGained;
 
 //Lets nodes be linked together.
 private Node optionOneNode;
@@ -25,8 +25,8 @@ private Node optionTwoNode;
 //Current Node Information
 public void currentNode(int nodeID, int optionOneID, int optionTwoID, String description,
  String optionOneText, String optionTwoText, boolean optionOneHasRequirement, boolean optionTwoHasRequirement, 
- int optionOneCoolnessRequirement, int optionOneTimeRequirement, int optionTwoCoolnessRequirement, int optionTwoTimeRequirement, 
- int coolnessGained, int timeGained) {
+ float optionOneCoolnessRequirement, float optionOneTimeRequirement, float optionTwoCoolnessRequirement, float optionTwoTimeRequirement, 
+ float coolnessGained, float timeGained) {
     
     this.currentNodeID = nodeID;
     this.optionOneID = optionOneID;
@@ -81,27 +81,27 @@ public void setOptionTwoHasRequirement(boolean optionTwoHasRequirement){this.opt
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Getters and setters for option One requirements
-public int getOptionOneCoolnessRequirement() {return optionOneCoolnessRequirement;}
-public void setOptionOneCoolnessRequirement(int optionOneCoolnessRequirement) {this.optionOneCoolnessRequirement = optionOneCoolnessRequirement;}
+public float getOptionOneCoolnessRequirement() {return optionOneCoolnessRequirement;}
+public void setOptionOneCoolnessRequirement(float optionOneCoolnessRequirement) {this.optionOneCoolnessRequirement = optionOneCoolnessRequirement;}
 
-public int setOptionOneTimeRequirement() {return optionOneTimeRequirement;}
-public void setOptionOneTimeRequirement(int optionOneTimeRequirement) {this.optionOneTimeRequirement = optionOneTimeRequirement;}
+public float getOptionOneTimeRequirement() {return optionOneTimeRequirement;}
+public void setOptionOneTimeRequirement(float optionOneTimeRequirement) {this.optionOneTimeRequirement = optionOneTimeRequirement;}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Getters and setter for option Two requirements.
-public int getOptionTwoCoolnessRequirement() {return optionTwoCoolnessRequirement;}
-public void setOptionTwoCoolnessRequirement(int optionTwoCoolnessRequirement) {this.optionTwoCoolnessRequirement = optionTwoCoolnessRequirement;}
+public float getOptionTwoCoolnessRequirement() {return optionTwoCoolnessRequirement;}
+public void setOptionTwoCoolnessRequirement(float optionTwoCoolnessRequirement) {this.optionTwoCoolnessRequirement = optionTwoCoolnessRequirement;}
 
-public int setOptionTwoTimeRequirement() {return optionTwoTimeRequirement;}
-public void setOptionTwoTimeRequirement(int optionTwoTimeRequirement) {this.optionTwoTimeRequirement = optionTwoTimeRequirement;}
+public float getOptionTwoTimeRequirement() {return optionTwoTimeRequirement;}
+public void setOptionTwoTimeRequirement(float optionTwoTimeRequirement) {this.optionTwoTimeRequirement = optionTwoTimeRequirement;}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Getters and setters for stat gains after arriving at current node.
-public int getCoolnessGained() {return coolnessGained;}
-public void setCoolnessGained(int coolnessGained) {this.coolnessGained = coolnessGained;}
+public float getCoolnessGained() {return coolnessGained;}
+public void setCoolnessGained(float coolnessGained) {this.coolnessGained = coolnessGained;}
 
-public int getTimeGained() {return timeGained;}
-public void setTimeGained(int timeGained) {this.timeGained = timeGained;}
+public float getTimeGained() {return timeGained;}
+public void setTimeGained(float timeGained) {this.timeGained = timeGained;}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Getters and setters for each of the two option nodes to allow for mapping.
