@@ -19,63 +19,32 @@ public Console(NodeMap map) {
 //Keeps the program running until it runs out of nodes or reaches the end.
     while(map.currentNode() != null){
 
-        Boolean canPassOptionOne;
-        Boolean canPassOptionTwo;
+        Boolean canPassOptionOne = true;
+        Boolean canPassOptionTwo = true;
+
+        //Adds points gained from current node if points are to be gained.
+        playerStats.addCoolnessPoints(map.currentNode().getCoolnessGained());
+        playerStats.addTimePoints(map.currentNode().getTimeGained());
 
         print(map.currentNode().getDescription());
         print(map.currentNode().getOptionOneText());
         print(map.currentNode().getOptionTwoText());
 
-        print(playerStats.toString());
 
-//Adds points gained from current node if points are to be gained.
-        playerStats.addCoolnessPoints(map.currentNode().getCoolnessGained());
-        playerStats.addTimePoints(map.currentNode().getTimeGained());
+        print(playerStats.toString());
 
 //If statement will allow looping once the user reaches the end of the game.
         if (map.currentNode().getOptionTwoText().equals("-")) {
 
-            map.decision(fromConsoleGetInt("Select Option 1 to restart"));
+            map.decision(fromConsoleGetInt("Select Option 1 to restart", canPassOptionOne, canPassOptionTwo));
 
         } 
-
-        //Mechanism to search for stats requirements to move to nodes. Checks through each node individually.
         
         else {
 
-            if(map.currentNode().optionOneHasRequirement() == true){
-
-                canPassOptionOne = playerStats.hasStats(playerStats.coolness, playerStats.time,
-                 map.currentNode().getOptionOneCoolnessRequirement(), map.currentNode().getOptionOneTimeRequirement());
-
-            }
-
-            else {canPassOptionOne = false;}
-
-            if (map.currentNode().optionTwoHasRequirement() == true){
-
-                canPassOptionTwo = playerStats.hasStats(playerStats.coolness, playerStats.time,
-                 map.currentNode().getOptionTwoCoolnessRequirement(), map.currentNode().getOptionTwoTimeRequirement());
-
-
-
-            }
-
-            else {canPassOptionTwo = false;}
-
-            if(canPassOptionOne == true && canPassOptionTwo == true) {
-
-                map.decision(fromConsoleGetInt("Press 1 or 2"));
-
-            }
-
-            else {
-
-                if(canPassOptionOne == true){map.decision(fromConsoleGetOne("You can only pass through option 1"));}
-                else if(canPassOptionTwo == true){map.decision(fromConsoleGetTwo("You can only pass through option 2"));}
-
-            }
-
+            //canPassOptionOne = map.canPassOptionOne(map, playerStats);
+            //canPassOptionTwo = map.canPassOptionTwo(map, playerStats);
+            map.decision(fromConsoleGetInt("Enter either option 1 or 2", canPassOptionOne, canPassOptionTwo));
 
         }
         
@@ -84,39 +53,12 @@ public Console(NodeMap map) {
 }
 
 //Obtains the numerical input and returns the decision.
-public  int fromConsoleGetInt(String prompt){
+public  int fromConsoleGetInt(String prompt, Boolean canPassOptionOne, Boolean canPassOptionTwo){
 
     print(prompt);
+
     int returnValue = io.nextInt();
     //int returnValue = randNumber();
-    return returnValue;
-
-}
-
-public  int fromConsoleGetOne(String prompt){
-
-    int returnValue = 0;
-
-    print(prompt);
-    while(returnValue != 1){
-    returnValue = io.nextInt();
-    //int returnValue = randNumber();
-    }
-
-    return returnValue;
-
-}
-
-public  int fromConsoleGetTwo(String prompt){
-
-    int returnValue = 0;
-
-    print(prompt);
-    while(returnValue != 2){
-    returnValue = io.nextInt();
-    //int returnValue = randNumber();
-    }
-
     return returnValue;
 
 }
