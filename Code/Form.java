@@ -62,12 +62,8 @@ public class Form extends PlayerStats{
 
         option1.addActionListener((ActionEvent e) -> {
 
-            if(canPassOptionOne == true){
-
              move(map,1);
-             nodeDisplay(map);}
-
-             else{move(map,2); nodeDisplay(map);}
+             nodeDisplay(map);
 
         }); 
 
@@ -76,12 +72,8 @@ public class Form extends PlayerStats{
         setColors(option2,Color.darkGray, Color.white);
         option2.addActionListener((ActionEvent e) -> {
 
-            if (canPassOptionTwo == true){
-
-                move(map,2);
-                nodeDisplay(map);}
-            
-                else{move(map,1); nodeDisplay(map);}
+            move(map,2);
+            nodeDisplay(map);
             
         });
 
@@ -108,7 +100,15 @@ public class Form extends PlayerStats{
 
         else {
 
-            map.decision(direction);   
+            if(canPassOptionOne == true && direction == 1){
+
+                map.decision(direction);}
+
+            else if(canPassOptionTwo == true && direction ==2){
+
+                map.decision(direction);}
+                
+                else{}
 
         }
 
@@ -138,9 +138,6 @@ public class Form extends PlayerStats{
         }
 
         else {
-
-            canPassOptionOne = map.canPassOptionOne(map, playerStats);
-            canPassOptionTwo = map.canPassOptionTwo(map, playerStats);
 
             option2.setVisible(true);
             option1.setFont(createFont(50));
