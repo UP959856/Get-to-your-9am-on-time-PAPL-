@@ -16,7 +16,6 @@ private float optionOneTimeRequirement;
 private float optionTwoCoolnessRequirement;
 private float optionTwoTimeRequirement;
 private float coolnessGained;
-private float timeGained;
 
 //Lets nodes be linked together.
 private Node optionOneNode;
@@ -26,7 +25,7 @@ private Node optionTwoNode;
 public void currentNode(int nodeID, int optionOneID, int optionTwoID, String description,
  String optionOneText, String optionTwoText, boolean optionOneHasRequirement, boolean optionTwoHasRequirement, 
  float optionOneCoolnessRequirement, float optionOneTimeRequirement, float optionTwoCoolnessRequirement, float optionTwoTimeRequirement, 
- float coolnessGained, float timeGained) {
+ float coolnessGained) {
     
     this.currentNodeID = nodeID;
     this.optionOneID = optionOneID;
@@ -45,7 +44,6 @@ public void currentNode(int nodeID, int optionOneID, int optionTwoID, String des
     this.optionTwoTimeRequirement = optionTwoTimeRequirement;
 
     this.coolnessGained = coolnessGained;
-    this.timeGained = timeGained;
 
 
 }
@@ -99,9 +97,6 @@ public void setOptionTwoTimeRequirement(float optionTwoTimeRequirement) {this.op
 //Getters and setters for stat gains after arriving at current node.
 public float getCoolnessGained() {return coolnessGained;}
 public void setCoolnessGained(float coolnessGained) {this.coolnessGained = coolnessGained;}
-
-public float getTimeGained() {return timeGained;}
-public void setTimeGained(float timeGained) {this.timeGained = timeGained;}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Getters and setters for each of the two option nodes to allow for mapping.
@@ -123,7 +118,7 @@ public String toString(){
     ", option1HasRequirement: " + optionOneHasRequirement + ", option2HasRequirement: " + optionTwoHasRequirement + 
     ", option 1 coolness: " + optionOneCoolnessRequirement +  ", option 1 time: " + optionOneTimeRequirement +
     ", option 2 coolness: " + optionTwoCoolnessRequirement + ", option 2 time: " + optionTwoTimeRequirement +
-    ", coolness gained: " + coolnessGained + ", time gained: " + timeGained;
+    ", coolness gained: " + coolnessGained;
 
 }
 
