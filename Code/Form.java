@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Form {
+public class Form extends PlayerStats{
 
     private static JFrame form;
     private static JTextArea ta;
@@ -11,6 +11,8 @@ public class Form {
     private static JButton option1;
     private static JButton option2;
 
+    static Boolean canPassOptionOne;
+    static Boolean canPassOptionTwo;
 
 //Build GUI
 
@@ -18,6 +20,7 @@ public class Form {
 
         createFrame(map);
         nodeDisplay(map);
+        
 
     }
 
@@ -35,6 +38,7 @@ public class Form {
 
         panel.add(option1);
         panel.add(option2);
+        
         //Adding Components to the frame.
         form.getContentPane().add(BorderLayout.SOUTH, panel);
         form.getContentPane().add(BorderLayout.CENTER, ta);
@@ -57,8 +61,8 @@ public class Form {
         setColors(option1,Color.darkGray, Color.white);
         option1.addActionListener((ActionEvent e) -> {
 
-            move(map,1);
-            nodeDisplay(map);
+             move(map,1);
+             nodeDisplay(map);
 
         });
 
@@ -67,8 +71,8 @@ public class Form {
         setColors(option2,Color.darkGray, Color.white);
         option2.addActionListener((ActionEvent e) -> {
 
-            move(map,2);
-            nodeDisplay(map);
+                move(map,2);
+                nodeDisplay(map);
             
         });
 
@@ -86,6 +90,8 @@ public class Form {
 
     private static void move(NodeMap map, int direction){
 
+        int decisionDirection = direction;
+
         if (map.currentNode().getDescription().equals("-"))
 
         {
@@ -94,15 +100,33 @@ public class Form {
 
         else {
 
-            map.decision(direction); }
+            canPassOptionOne = map.canPassOptionOne(map, playerStats);
+            canPassOptionTwo = map.canPassOptionTwo(map, playerStats);
+
+            if(canPassOptionOne == false){
+
+                decisionDirection = 2;
+            }
+            else if(canPassOptionTwo == false){
+
+                decisionDirection = 1;
+            }
+
+            else{map.decision(decisionDirection);}
+
+            }
 
     }
 
     private static void nodeDisplay(NodeMap map){
 
-        ta.setText( map.currentNode().getDescription() + "\n");
+        handlePlayerStats(map);
+
+        ta.setText(map.currentNode().getDescription() + "\n");
         ta.append("Option 1: " + map.currentNode().getOptionOneText() + "\n");
         ta.append("Option 2: " + map.currentNode().getOptionTwoText() + "\n");
+        ta.append("Coolness Points: " + playerStats.getCoolnessPoints() + "\n");
+        ta.append("Time Points: " + playerStats.getTimePoints());
         ta.setLineWrap(true);
         ta.setWrapStyleWord(true);
 
@@ -140,4 +164,16 @@ public class Form {
         return  new Font("Arial", Font.PLAIN,size);
     
     }
+
+    public static PlayerStats playerStats = new PlayerStats();
+
+    public static void handlePlayerStats(NodeMap map){
+
+        playerStats.addCoolnessPoints(map.currentNode().getCoolnessGained());
+        playerStats.addTimePoints(map.currentNode().getTimeGained());
+
+        if (map.currentNode().getOptionTwoText().equals("-")){playerStats.resetStats();}
+
+    }
+
 }
