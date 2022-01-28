@@ -24,7 +24,6 @@ public Console(NodeMap map) {
 
         //Adds points gained from current node if points are to be gained.
         playerStats.addCoolnessPoints(map.currentNode().getCoolnessGained());
-        playerStats.addTimePoints(map.currentNode().getTimeGained());
 
         print(map.currentNode().getDescription());
         print(map.currentNode().getOptionOneText());
@@ -45,6 +44,10 @@ public Console(NodeMap map) {
 
             canPassOptionOne = map.canPassOptionOne(map, playerStats);
             canPassOptionTwo = map.canPassOptionTwo(map, playerStats);
+
+            print("Can pass option One: " + canPassOptionOne);
+            print("Can pass option Two: " + canPassOptionTwo);
+
             map.decision(fromConsoleGetInt("Enter either option 1 or 2", canPassOptionOne, canPassOptionTwo));
 
         }
