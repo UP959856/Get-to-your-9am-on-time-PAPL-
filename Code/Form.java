@@ -38,7 +38,7 @@ public class Form extends PlayerStats{
 
         panel.add(option1);
         panel.add(option2);
-        
+
         //Adding Components to the frame.
         form.getContentPane().add(BorderLayout.SOUTH, panel);
         form.getContentPane().add(BorderLayout.CENTER, ta);
@@ -59,6 +59,7 @@ public class Form extends PlayerStats{
         option1 = new JButton("Option 1");
         option1.setFont(createFont(50));
         setColors(option1,Color.darkGray, Color.white);
+
         option1.addActionListener((ActionEvent e) -> {
 
              move(map,1);
@@ -90,32 +91,46 @@ public class Form extends PlayerStats{
 
     private static void move(NodeMap map, int direction){
 
-        int decisionDirection = direction;
 
-        if (map.currentNode().getDescription().equals("-"))
+        if (map.currentNode().getDescription().equals("-")){
 
-        {
+            map.optionTwoPath(); 
 
-            map.optionTwoPath(); }
+        }
 
         else {
 
             canPassOptionOne = map.canPassOptionOne(map, playerStats);
             canPassOptionTwo = map.canPassOptionTwo(map, playerStats);
 
+            map.decision(correctDecision(direction, canPassOptionOne, canPassOptionTwo));   
+
+        }
+
+    }
+
+    public static int correctDecision(int direction, Boolean canPassOptionOne, Boolean canPassOptionTwo){
+
+        int returnValue = direction;
+
+        if(canPassOptionOne == false | canPassOptionTwo == false){
+    
             if(canPassOptionOne == false){
-
-                decisionDirection = 2;
+    
+                    returnValue = 1;
+    
             }
-            else if(canPassOptionTwo == false){
+    
+            else{
+    
+                    returnValue = 2;
+    
+                }
+    
+        }
 
-                decisionDirection = 1;
-            }
-
-            else{map.decision(decisionDirection);}
-
-            }
-
+        return returnValue;
+        
     }
 
     private static void nodeDisplay(NodeMap map){
