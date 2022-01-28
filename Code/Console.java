@@ -54,7 +54,7 @@ public Console(NodeMap map) {
 }
 
 //Obtains the numerical input and returns the decision.
-public  int fromConsoleGetInt(String prompt, Boolean canPassOptionOne, Boolean canPassOptionTwo){
+public int fromConsoleGetInt(String prompt, Boolean canPassOptionOne, Boolean canPassOptionTwo){
 
     print(prompt);
     int returnValue = 0;
