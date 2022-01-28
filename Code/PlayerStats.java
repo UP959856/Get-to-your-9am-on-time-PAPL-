@@ -11,7 +11,6 @@ public class PlayerStats {
     }
 
 //Getters, setters and adders for points.
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
     public float getCoolnessPoints(){return coolness;}
     public void setCoolnessPoints(float coolness){this.coolness = coolness;}
@@ -19,7 +18,7 @@ public class PlayerStats {
 
     public float getTimePoints(){return time;}
     public void setTimePoints(float time){this.time = time;}
-    public void addTimePoints(float points){this.time = this.time + time;}
+    public void addTimePoints(float points){this.time = this.time + points;}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Method to check if player has required stats to travel to a node with requirements.
@@ -28,8 +27,11 @@ public class PlayerStats {
         boolean hasRequiredStats;
 
         if(coolness >= requiredCoolness && time == requiredTime){
+
             hasRequiredStats = true;
+
         }
+
         else{hasRequiredStats = false;}
 
         return hasRequiredStats;
@@ -46,7 +48,7 @@ public class PlayerStats {
 
         this.setCoolnessPoints(0);
         this.setTimePoints(0);
-        
+
     }
     
 }
