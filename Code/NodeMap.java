@@ -94,8 +94,8 @@ public Boolean canPassOptionOne(NodeMap nm, PlayerStats playerStats){
 
     if(nm.currentNode().optionOneHasRequirement() == true){
 
-        canPassOptionOne = playerStats.hasStats(playerStats.coolness, playerStats.time,
-         nm.currentNode().getOptionOneCoolnessRequirement(), nm.currentNode().getOptionOneTimeRequirement());
+        canPassOptionOne = playerStats.hasStats(playerStats.coolness,
+         nm.currentNode().getOptionOneCoolnessRequirement());
 
     }
 
@@ -107,10 +107,10 @@ public Boolean canPassOptionTwo(NodeMap nm, PlayerStats playerStats){
 
     boolean canPassOptionTwo = true;
 
-    if(nm.currentNode().optionOneHasRequirement() == true){
+    if(nm.currentNode().optionTwoHasRequirement() == true){
 
-        canPassOptionTwo = playerStats.hasStats(playerStats.coolness, playerStats.time,
-         nm.currentNode().getOptionOneCoolnessRequirement(), nm.currentNode().getOptionOneTimeRequirement());
+        canPassOptionTwo = playerStats.hasStats(playerStats.coolness,
+         nm.currentNode().getOptionTwoCoolnessRequirement());
 
     }
 
