@@ -1,12 +1,10 @@
 public class PlayerStats {
 
     public float coolness;
-    public float time;
 
     public void playerStats(float coolness, float time){
 
         this.coolness = coolness;
-        this.time = time;
 
     }
 
@@ -15,39 +13,28 @@ public class PlayerStats {
     public float getCoolnessPoints(){return coolness;}
     public void setCoolnessPoints(float coolness){this.coolness = coolness;}
     public void addCoolnessPoints(float points){this.coolness = this.coolness + points;}
-
-    public float getTimePoints(){return time;}
-    public void setTimePoints(float time){this.time = time;}
-    public void addTimePoints(float points){this.time = this.time + points;}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Method to check if player has required stats to travel to a node with requirements.
-    public boolean hasStats(float coolness, float time, float requiredCoolness, float requiredTime){
+    public boolean hasStats(float coolness, float requiredCoolness){
 
-        boolean hasRequiredStats;
+        Boolean hasStats = false;
 
-        if(coolness >= requiredCoolness && time == requiredTime){
+        if(coolness >= requiredCoolness){hasStats = true;}
 
-            hasRequiredStats = true;
-
-        }
-
-        else{hasRequiredStats = false;}
-
-        return hasRequiredStats;
+        return hasStats;
         
     }
 
     public String toString(){
 
-        return "Coolness: " + coolness + "\n" + "Time: " + time;
+        return "Coolness: " + coolness;
 
     }
 
     public void resetStats(){
 
         this.setCoolnessPoints(0);
-        this.setTimePoints(0);
 
     }
     
