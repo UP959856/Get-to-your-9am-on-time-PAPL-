@@ -107,8 +107,6 @@ public class Form extends PlayerStats{
             else if(canPassOptionTwo == true && direction ==2){
 
                 map.decision(direction);}
-                
-                else{}
 
         }
 
@@ -122,7 +120,6 @@ public class Form extends PlayerStats{
         ta.append("Option 1: " + map.currentNode().getOptionOneText() + "\n");
         ta.append("Option 2: " + map.currentNode().getOptionTwoText() + "\n");
         ta.append("Coolness Points: " + playerStats.getCoolnessPoints() + "\n");
-        ta.append("Time Points: " + playerStats.getTimePoints());
         ta.setLineWrap(true);
         ta.setWrapStyleWord(true);
 
@@ -169,7 +166,6 @@ public class Form extends PlayerStats{
     public static void handlePlayerStats(NodeMap map){
 
         playerStats.addCoolnessPoints(map.currentNode().getCoolnessGained());
-        playerStats.addTimePoints(map.currentNode().getTimeGained());
 
         if (map.currentNode().getOptionTwoText().equals("-")){playerStats.resetStats();}
 
