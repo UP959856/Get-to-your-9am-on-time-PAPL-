@@ -71,13 +71,14 @@ public int fromConsoleGetInt(String prompt, Boolean canPassOptionOne, Boolean ca
             }
         }
 
-        else{
+        else if (canPassOptionTwo == false){
             while (returnValue != 1){
 
                 returnValue = io.nextInt();
 
             }
         }
+        
 
     }
 
