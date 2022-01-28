@@ -62,18 +62,26 @@ public class Form extends PlayerStats{
 
         option1.addActionListener((ActionEvent e) -> {
 
-             move(map,1);
-             nodeDisplay(map);
+            if(canPassOptionOne == true){
 
-        });
+             move(map,1);
+             nodeDisplay(map);}
+
+             else{move(map,2); nodeDisplay(map);}
+
+        }); 
 
         option2 = new JButton("Option 2");
         option2.setFont(createFont(50));
         setColors(option2,Color.darkGray, Color.white);
         option2.addActionListener((ActionEvent e) -> {
 
+            if (canPassOptionTwo == true){
+
                 move(map,2);
-                nodeDisplay(map);
+                nodeDisplay(map);}
+            
+                else{move(map,1); nodeDisplay(map);}
             
         });
 
@@ -100,37 +108,10 @@ public class Form extends PlayerStats{
 
         else {
 
-            canPassOptionOne = map.canPassOptionOne(map, playerStats);
-            canPassOptionTwo = map.canPassOptionTwo(map, playerStats);
-
-            map.decision(correctDecision(direction, canPassOptionOne, canPassOptionTwo));   
+            map.decision(direction);   
 
         }
 
-    }
-
-    public static int correctDecision(int direction, Boolean canPassOptionOne, Boolean canPassOptionTwo){
-
-        int returnValue = direction;
-
-        if(canPassOptionOne == false | canPassOptionTwo == false){
-    
-            if(canPassOptionOne == false){
-    
-                    returnValue = 1;
-    
-            }
-    
-            else{
-    
-                    returnValue = 2;
-    
-                }
-    
-        }
-
-        return returnValue;
-        
     }
 
     private static void nodeDisplay(NodeMap map){
@@ -145,6 +126,9 @@ public class Form extends PlayerStats{
         ta.setLineWrap(true);
         ta.setWrapStyleWord(true);
 
+        canPassOptionOne = map.canPassOptionOne(map, playerStats);
+        canPassOptionTwo = map.canPassOptionTwo(map, playerStats);
+
         if (map.currentNode().getOptionTwoText().equals("-")){
 
             option1.setFont(createFont(40));
@@ -154,6 +138,9 @@ public class Form extends PlayerStats{
         }
 
         else {
+
+            canPassOptionOne = map.canPassOptionOne(map, playerStats);
+            canPassOptionTwo = map.canPassOptionTwo(map, playerStats);
 
             option2.setVisible(true);
             option1.setFont(createFont(50));
